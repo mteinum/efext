@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>efext</id>
+    <version>1.0.0</version>
+    <title>Entity Framework Extensions</title>
+    <authors>Morten Teinum</authors>
+    <projectUrl>https://github.com/mteinum/efext</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Utility extension methods for Entity Framework</description>
+    <copyright>Copyright 2013</copyright>
+    <tags>ef</tags>
+  </metadata>
+
+  <files>
+    <file src="bin\Debug\*.dll" target="lib\net40" />
+    <file src="bin\Debug\*.pdb" target="lib\net40" />
+  </files>
+</package>
