@@ -1,11 +1,9 @@
 ﻿// @mteinum
 
-using System;
 using System.Linq;
-using System.Linq.Expressions;
 using NUnit.Framework;
 
-namespace EfExt
+namespace EfExt.Tests
 {
     [TestFixture]
     public class ExtFixture

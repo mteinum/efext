@@ -1,8 +1,9 @@
 ﻿// @mteinum
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EfExt
+namespace EfExt.Tests
 {
     [Table("Number")]
     public class PhoneNumber

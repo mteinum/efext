@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EfExt
+namespace EfExt.Tests
 {
     [Table("NumberPlan")]
     public class NumberPlan

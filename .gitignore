@@ -3,3 +3,4 @@ EfExt.v11.suo
 bin
 obj
 packages/*/**
+*.user

@@ -2,7 +2,7 @@
 
 using System.Data.Entity;
 
-namespace EfExt
+namespace EfExt.Tests
 {
     public class TestContext : DbContext
     {
