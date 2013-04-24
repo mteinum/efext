@@ -24,6 +24,12 @@ There are two overloads for the Between method
 var subset = ctx.Numbers.Between(i => i.Number, "40401002", "40401004");
 ```
 
+alternative
+
+```c#
+var subset = ctx.Numbers.Between("40401002", i => i.Number, "40401004");
+```
+
 2. Find rows where a string is between two columns
 
 ```c#
@@ -32,3 +38,14 @@ var plan = ctx.NumberPlans.Between(
                     r => r.UpperNumber,
                     "40410003");
 ```
+
+alternative
+
+```c#
+var plan = ctx.NumberPlans.Between(
+                    r => r.LowerNumber,
+                    "40410003",
+                    r => r.UpperNumber);
+```
+
+https://twitter.com/mteinum
