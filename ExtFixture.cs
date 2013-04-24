@@ -1,5 +1,8 @@
 ﻿// @mteinum
+
+using System;
 using System.Linq;
+using System.Linq.Expressions;
 using NUnit.Framework;
 
 namespace EfExt
@@ -26,6 +29,20 @@ namespace EfExt
                 var subset = ctx.Numbers.Between(i => i.Fax, "2000", "2003");
 
                 Assert.AreEqual(4, subset.Count());
+            }
+        }
+
+        [Test]
+        public void PlanTest()
+        {
+            using (var ctx = new TestContext())
+            {
+                var plan = ctx.NumberPlans.Between(
+                    r => r.LowerNumber,
+                    r => r.UpperNumber,
+                    "40410003").Single();
+
+                Assert.AreEqual(2, plan.OperatorId);
             }
         }
     }
