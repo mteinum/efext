@@ -3,7 +3,18 @@ efext
 
 Entity Framework Extensions
 
-.NET library with utility extensions for between operations
+.NET library with utility extensions for between operations.
+
+Install the package from nuget
+
+https://nuget.org/packages/efext/
+
+and add the using directive
+
+```c#
+using EfExt;
+```
+
 
 There are two overloads for the Between method
 
