@@ -20,6 +20,17 @@ namespace EfExt.Tests
         }
 
         [Test]
+        public void KeyTestAlternative()
+        {
+            using (var ctx = new TestContext())
+            {
+                var subset = ctx.Numbers.Between("40401002", i => i.Number, "40401004");
+
+                Assert.AreEqual(3, subset.Count());
+            }
+        }
+
+        [Test]
         public void FaxTest()
         {
             using (var ctx = new TestContext())
@@ -43,5 +54,20 @@ namespace EfExt.Tests
                 Assert.AreEqual(2, plan.OperatorId);
             }
         }
+
+        [Test]
+        public void PlanTestAlternative()
+        {
+            using (var ctx = new TestContext())
+            {
+                var plan = ctx.NumberPlans.Between(
+                    r => r.LowerNumber,
+                    "40410003",
+                    r => r.UpperNumber).Single();
+
+                Assert.AreEqual(2, plan.OperatorId);
+            }
+        }
+
     }
 }
