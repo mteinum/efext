@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace EfExt.Tests
 {
     [TestFixture]
-    public class ExtFixture
+    public class StringExtFixture
     {
         [Test]
         public void KeyTest()
@@ -25,6 +25,50 @@ namespace EfExt.Tests
             using (var ctx = new TestContext())
             {
                 var subset = ctx.Numbers.Between("40401002", i => i.Number, "40401004");
+
+                Assert.AreEqual(3, subset.Count());
+            }
+        }
+
+        [Test]
+        public void GreaterThanTest()
+        {
+            using (var ctx = new TestContext())
+            {
+                var subset = ctx.Numbers.GreaterThan(m => m.Number, "40401002");
+
+                Assert.AreEqual(3, subset.Count());
+            }
+        }
+
+        [Test]
+        public void GreaterThanOrEqual()
+        {
+            using (var ctx = new TestContext())
+            {
+                var subset = ctx.Numbers.GreaterThanOrEqual(m => m.Number, "40401002");
+
+                Assert.AreEqual(4, subset.Count());
+            }
+        }
+
+        [Test]
+        public void LessThan()
+        {
+            using (var ctx = new TestContext())
+            {
+                var subset = ctx.Numbers.LessThan(m => m.Number, "40401002");
+
+                Assert.AreEqual(2, subset.Count());
+            }
+        }
+
+        [Test]
+        public void LessThanOrEqual()
+        {
+            using (var ctx = new TestContext())
+            {
+                var subset = ctx.Numbers.LessThanOrEqual(m => m.Number, "40401002");
 
                 Assert.AreEqual(3, subset.Count());
             }

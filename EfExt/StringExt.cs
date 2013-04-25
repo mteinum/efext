@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace EfExt
 {
-    public static class Ext
+    public static class StringExt
     {
         /// <summary>
         /// 

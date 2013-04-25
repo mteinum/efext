@@ -42,8 +42,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ext.cs" />
+    <Compile Include="StringExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EfExt.nuspec" />
