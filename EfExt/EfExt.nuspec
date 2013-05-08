@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>efext</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <title>Entity Framework Extensions</title>
     <authors>Morten Teinum</authors>
     <projectUrl>https://github.com/mteinum/efext</projectUrl>

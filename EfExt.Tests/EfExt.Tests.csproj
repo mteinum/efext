@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RangeFixture.cs" />
     <Compile Include="StringExtFixture.cs" />
     <Compile Include="NumberPlan.cs" />
     <Compile Include="PhoneNumber.cs" />
