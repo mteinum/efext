@@ -26,7 +26,7 @@ jobs:
       run: dotnet build EfExt.sln --configuration Release --no-restore
     
     - name: Test
-      run: dotnet test EfExt.sln --configuration Release --no-build --verbosity normal
+      run: dotnet test EfExt.sln --configuration Release --no-build --verbosity normal --framework net8.0
     
     - name: Pack
       run: dotnet pack EfExt/EfExt.csproj --configuration Release --no-build --output ./artifacts
