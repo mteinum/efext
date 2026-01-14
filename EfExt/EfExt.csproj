@@ -19,7 +19,7 @@
     
     <!-- NuGet Package Info -->
     <PackageId>efext</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Title>Entity Framework Extensions</Title>
     <Authors>Morten Teinum</Authors>
     <PackageProjectUrl>https://github.com/mteinum/efext</PackageProjectUrl>
