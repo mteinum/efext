@@ -1,6 +1,8 @@
 efext
 =====
 
+[![Build](https://github.com/mteinum/efext/actions/workflows/build.yml/badge.svg)](https://github.com/mteinum/efext/actions/workflows/build.yml)
+
 Entity Framework Extensions
 
 .NET library with utility extensions for between operations.
