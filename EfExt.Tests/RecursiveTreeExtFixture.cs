@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace EfExt.Tests
 {
@@ -27,7 +28,7 @@ namespace EfExt.Tests
 
         private Node _tree;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void SetUp()
         {
             _tree = new Node(1)
@@ -46,7 +47,7 @@ namespace EfExt.Tests
 
             var expected = new[] { 1, 2, 3, 4, 5, 6 };
 
-            Assert.IsTrue(expected.SequenceEqual(secuence));
+            ClassicAssert.IsTrue(expected.SequenceEqual(secuence));
         }
 
         [Test]
@@ -55,7 +56,7 @@ namespace EfExt.Tests
             var noChildren = _tree.Recursive(n => n.Children)
                                   .Where(n => n.Children.Empty());
 
-            Assert.AreEqual(4, noChildren.Count());
+            ClassicAssert.AreEqual(4, noChildren.Count());
         }
 
 
@@ -78,7 +79,7 @@ namespace EfExt.Tests
 
             var expected = new[] { 1, 2, 4, 6, 3, 5 };
 
-            Assert.IsTrue(expected.SequenceEqual(sortedByTree.Select(i => i.Id)));
+            ClassicAssert.IsTrue(expected.SequenceEqual(sortedByTree.Select(i => i.Id)));
         }
     }
 

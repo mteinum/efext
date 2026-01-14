@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;net6.0;net8.0</TargetFrameworks>
     <AssemblyName>EfExt.Tests</AssemblyName>
     <RootNamespace>EfExt.Tests</RootNamespace>
     <LangVersion>latest</LangVersion>
@@ -18,7 +18,10 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="5.0.0" />
-    <PackageReference Include="NUnit" Version="2.6.2" />
+    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
