@@ -32,7 +32,7 @@ jobs:
       run: dotnet pack EfExt/EfExt.csproj --configuration Release --no-build --output ./artifacts
     
     - name: Upload NuGet package
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: nuget-package
         path: ./artifacts/*.nupkg
