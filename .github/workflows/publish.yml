@@ -1,0 +1,43 @@
+name: Publish to NuGet
+
+on:
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    
+    permissions:
+      id-token: write  # Required for GitHub OIDC token issuance
+      contents: read
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    
+    - name: Restore dependencies
+      run: dotnet restore EfExt.sln
+    
+    - name: Build
+      run: dotnet build EfExt.sln --configuration Release --no-restore
+    
+    - name: Test
+      run: dotnet test EfExt.sln --configuration Release --no-build --verbosity normal
+    
+    - name: Pack
+      run: dotnet pack EfExt/EfExt.csproj --configuration Release --no-build --output ./artifacts
+    
+    - name: NuGet login (OIDC → temp API key)
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: mteinum
+    
+    - name: Publish to NuGet
+      run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
